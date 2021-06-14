@@ -11,6 +11,8 @@
         tools:context=".MainActivity">
     <com.google.android.material.navigation.NavigationView
         android:scrollbars="none"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/nav_background"
         android:layout_width="340dp"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
@@ -22,17 +24,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <include layout="@layout/nav_header_main"/>
-            <ListView
-                android:id="@+id/list"
-                android:choiceMode="singleChoice"
-                android:divider="@color/list_divider"
-                android:dividerHeight="1dp"
-                android:listSelector="@drawable/list_selector"
-                android:textColor="#424242"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ListView>
+                android:layout_height="10dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layoutAnimation="@anim/layout_fall_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+           <Button
+               android:background="@drawable/bg"
+               android:layout_marginStart="50dp"
+               android:layout_marginEnd="50dp"
+               android:layout_marginBottom="10dp"
+               android:hint="@string/Logout"
+               android:drawableLeft="@drawable/ic_logout"
+               android:paddingStart="20dp"
+               android:elevation="30dp"
+               android:paddingEnd="40dp"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"/>
         </LinearLayout>
+
         </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
 
